@@ -2,7 +2,7 @@ fun main() {
     var cardType: String = "VKpay"
     var transferAmount: Int = 0
     var previousMonthTransferAmount: Int = 0
-    val comission = comissionAmount("VKpay", 3_000, 6_000)//Введите тип карты, сумму перевода и сумму переводов за текущий месяц
+    val comission = comissionAmount("MasterCard", 3_000, 6_000)//Введите тип карты, сумму перевода и сумму переводов за текущий месяц
     println("Сумма комиссии за перевод: " + (comission) + " руб.")
 }
 
@@ -23,7 +23,7 @@ fun MasterCardMaestroLimitsCheck(
     }
 }
 
-fun MasterCardMaestro(transferAmount: Int, previousMonthTransferAmount: Int): Any {
+fun MasterCardMaestro(transferAmount: Int, previousMonthTransferAmount: Int): Double {
     return when {((transferAmount + previousMonthTransferAmount) > 75_000) -> (transferAmount / 100 * 0.6) + 20 //до 75000 в мес комиссия 0, если больше 0,6% +20 руб)
         else -> 0.0
     }

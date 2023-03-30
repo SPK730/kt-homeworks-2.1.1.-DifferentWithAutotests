@@ -4,7 +4,7 @@ plugins {
     id 'jacoco'
 }
 
-group = 'org.example'
+group = 'ru.netology'
 version = '1.0-SNAPSHOT'
 
 repositories {
@@ -12,19 +12,15 @@ repositories {
 }
 
 dependencies {
-    testImplementation 'org.jetbrains.kotlin:kotlin-test'
-    implementation 'org.jetbrains.kotlin:kotlin-stdlib:'
-    testImplementation 'junit:junit:4.13.2'
-}
-
-test {
-    useJUnitPlatform()
+//    testImplementation 'org.jetbrains.kotlin:kotlin-test'
+    implementation ('org.jetbrains.kotlin:kotlin-stdlib:')
+    testImplementation ('junit:junit:4.13.2')
 }
 
 compileKotlin {
-    kotlinOptions.jvmTarget = '1.8'
+    kotlinOptions.jvmTarget = '17'
 }
 
 compileTestKotlin {
-    kotlinOptions.jvmTarget = '1.8'
+    kotlinOptions.jvmTarget = '17'
 }
